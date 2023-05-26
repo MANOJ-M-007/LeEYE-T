@@ -17,7 +17,6 @@ const registerUser = asyncHandler(async (req, res) => {
     country,
     profile
   } = req.body
-  console.log(profile);
 
   const userExists = await User.findOne({ email })
   if (userExists) {
@@ -84,7 +83,6 @@ const userDetails = asyncHandler(async (req, res) => {
 const editProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user)
   const Data = req.body
-  console.log(Data);
 
   if (user) {
     user.name = Data.name || user.name
@@ -93,7 +91,7 @@ const editProfile = asyncHandler(async (req, res) => {
     if (Data.password) {
       user.password = Data.password;
     }
-    user.address = Data.address || user.address;
+    user.address = Data.addressName || user.address;
     user.city = Data.city || user.city;
     user.state = Data.state || user.state;
     user.pin = Data.pin || user.pin;

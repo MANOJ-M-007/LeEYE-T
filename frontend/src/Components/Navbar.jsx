@@ -1,11 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import {
   Avatar,
   Box,
-  Button,
   Container,
   IconButton,
   Menu,
@@ -17,7 +16,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { userLogout } from "../Slices/userLoginSlice";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -83,7 +81,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            TASK MANAGER
+            PROFILE MANAGER
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

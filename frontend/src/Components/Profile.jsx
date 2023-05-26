@@ -26,7 +26,7 @@ const Profile = () => {
   const { userDetails } = useSelector((state) => state.userDetails);
   //   /// for add address dailog box
 
-  //   const { profileEditSuccess } = useSelector((state) => state.profileEditData);
+    const { profileEditSuccess } = useSelector((state) => state.profileEdit);
   //edit profile
 
   const [name, setName] = useState();
@@ -40,14 +40,13 @@ const Profile = () => {
   const [District, setDistrict] = useState();
   const [country, setCountry] = useState();
   const [profile, setProfile] = useState([]);
-
+  console.log(profile);
   //edit profile
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
-    // resetHandler();
     setOpen(false);
   };
 
@@ -77,15 +76,18 @@ const Profile = () => {
       pin,
       District,
       country,
-      profile,
+      if (profile) {
+        Data.profile = profile;
+      }
     };
+    
     dispatch(profileEditAction(Data));
     handleClose();
   };
 
   useEffect(() => {
     dispatch(userDetailsAction());
-  }, [dispatch]);
+  }, [dispatch,profileEditSuccess]);
 
   return (
     <Box sx={{ p: { xs: 1, sm: 2, md: 3, lg: 4 } }}>

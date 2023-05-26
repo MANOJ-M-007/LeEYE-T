@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Grid,
-  TextField,
   Typography,
 } from "@mui/material";
 import img from "../assets/banner.png";
@@ -36,7 +29,7 @@ const Banner = () => {
           borderRadius: ".5rem",
         }}
       />
-      WELCOME TO TASK MANAGER
+      WELCOME TO PROFILE
       <Box
         sx={{
           position: "absolute",
